@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MVC Salary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="conatiner d-flex flex-column">
+        <div class="grossSalary mt-5 d-flex justify-content-center">
+            <form class="w-25" action="/" method="post">
+                <div class="mb-3">
+                  <label class="form-label">Lương GROSS</label>
+                  <input type="number" class="form-control" name="grossSalary" value="<%=grossSalary%>">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" >Số người phụ thuộc</label>
+                  <input type="number" class="form-control" name="dependentPerson" value="<%=dependentPerson%>" min="0">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" >Vùng</label>
+                  <input type="number" class="form-control" name="area" value="<%=area%>" min="1" max="4">
+                </div>
+                <button type="submit" class="btn btn btn-success">Chuyển Đổi</button>
+            </form>
+        </div>
+
+        <div class="taxShow w-100 mt-5 d-flex justify-content-center">
+          <div class="detail w-50">
+            <table class="table">
+              <thead class="table-light text-center">
+                <tr>
+                  <th scope="col">Lương GROSS</th>
+                  <th scope="col">Bảo Hiểm</th>
+                  <th scope="col">Thuế TNCN</th>
+                  <th scope="col">Lương NET</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr>
+                  <td><%=grossSalary%></td>
+                  <td><%=insurance%></td>
+                  <td><%=personalIncomeTax%></td>
+                  <td><%=netSalary%></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
